@@ -42,7 +42,10 @@ function App() {
 
   const [isExpert, setIsExpert] = useState(false);
   const [theme, setTheme] = useState('dark');
-  const [visualsEnabled, setVisualsEnabled] = useState(false);
+  const [visualsEnabled, setVisualsEnabled] = useState(() => {
+    const saved = localStorage.getItem('visualsEnabled');
+    return saved !== null ? JSON.parse(saved) : false;
+  });
   const [analyserNode, setAnalyserNode] = useState(null);
 
   const toggleExpert = () => {
@@ -115,7 +118,11 @@ function App() {
   }, []);
 
   const toggleVisuals = () => {
-    setVisualsEnabled(prev => !prev);
+    setVisualsEnabled(prev => {
+      const newState = !prev;
+      localStorage.setItem('visualsEnabled', JSON.stringify(newState));
+      return newState;
+    });
   };
 
   return (
