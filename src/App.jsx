@@ -49,7 +49,7 @@ function App() {
   //////////////////////////////////////////////////////////////////////////////
   // Construct the database name based on the jamId
   const firstPathSegment = document.location.pathname.split('/')[1];
-  const baseDbName = (import.meta.env.VITE_DBNAME || 'bloop-pub') + (firstPathSegment ? '-' + firstPathSegment : '');
+  const baseDbName = (import.meta.env.VITE_DBNAME || 'blooper-pub') + (firstPathSegment ? '-' + firstPathSegment : '');
   const dbName = isValidJamId ? `${baseDbName}-${sanitizedJamId}` : baseDbName;
 
   console.log("dbName", dbName);
