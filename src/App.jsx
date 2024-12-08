@@ -152,17 +152,6 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  useEffect(() => {
-    // Fix for mobile viewport height
-    const appHeight = () => {
-      const doc = document.documentElement;
-      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-    };
-    window.addEventListener('resize', appHeight);
-    appHeight();
-    return () => window.removeEventListener('resize', appHeight);
-  }, []);
-
   const toggleVisuals = () => {
     setVisualsEnabled(prev => {
       const newState = !prev;

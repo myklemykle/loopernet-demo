@@ -6,13 +6,7 @@
   justify-content: center; /* Center the button groups */
   padding: 10px;
   gap: 10px;
-}
-
-.button-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: nowrap;
+  margin-bottom: 20px;
 }
 
 .control-button {
@@ -29,11 +23,6 @@
   min-width: 120px;
 }
 
-.button-group-break {
-  flex-basis: 100%;
-  height: 0;
-}
-
 .control-button:hover {
   background-color: var(--button-hover);
 }
@@ -47,7 +36,7 @@
   animation: pulseBorder 2s infinite;
 } */
 
-@keyframes pulseBorder {
+/* @keyframes pulseBorder {
   0% {
     border-color: var(--button-border);
   }
@@ -57,7 +46,7 @@
   100% {
     border-color: var(--button-border);
   }
-} */
+}  */
 
 /* Specific styles for other buttons if needed */
 .play-pause-button, .clear-button, .theme-toggle {
@@ -145,36 +134,11 @@
   width: 150px;
 }
 
-.latency-value {
-  min-width: 60px;
-  text-align: center;
-}
-
-.measure-latency-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: 2px solid var(--button-border);
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.measure-latency-button:hover {
-  background-color: var(--button-hover);
-}
-
 /* Responsive styles for mobile */
 @media (max-width: 767px) {
   .latency-slider {
     flex: 1;
     margin: 0;
-  }
-
-  .measure-latency-button {
-    flex: 1;
-    margin-top: 5px;
   }
 }
 
@@ -190,13 +154,11 @@
   color: var(--button-text);
 }
 
-.bpm-value,
-.latency-value {
+.bpm-value {
   cursor: pointer;
 }
 
-.bpm-value:hover,
-.latency-value:hover {
+.bpm-value:hover {
   text-decoration: underline;
 }
 
@@ -222,10 +184,6 @@
 @media (max-width: 768px) {
   .latency-control {
     width: 100%;
-  }
-
-  .latency-value {
-    margin-top: 10px;
   }
 }
 
